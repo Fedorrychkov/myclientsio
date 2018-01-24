@@ -1,0 +1,23 @@
+@import '../../../assets/styles/_variables';
+
+.nav {
+    &__list {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    &__item {
+        display: block;
+        margin: 0 $offset-lg 0 0;
+        & a {
+            text-decoration: none;
+            color: $dark-color;
+            font-weight: bold;
+        }
+    }
+    &__link {
+        &-active {
+            color: $blue-color !important;
+        }
+    }
+}

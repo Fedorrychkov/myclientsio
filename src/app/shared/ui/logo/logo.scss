@@ -1,0 +1,12 @@
+@import '../../../assets/styles/_variables';
+
+.logo {
+    font-size: $font-lg;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+    color: $dark-color;
+    & span {
+        color: $blue-color;
+    }
+}

@@ -1,0 +1,10 @@
+@import './_variables';
+
+.link {
+    color: $dark-color;
+    display: inline-block;
+    &__primary {
+        padding: 0 0 $offset-mc/2;
+        border-bottom: 4px solid $blue-color;
+    }
+}

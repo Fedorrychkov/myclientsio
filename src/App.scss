@@ -1,0 +1,19 @@
+@import './app/assets/styles/_variables';
+@import './app/assets/styles/_reset';
+@import './app/assets/styles/_links';
+
+.app {
+  overflow: auto;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: $screen-xl;
+  width: 98%;
+}
+
+@media (max-width: $screen-xl) {
+  .wrapper {
+    width: 95%;
+  }
+}

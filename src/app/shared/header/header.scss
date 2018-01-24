@@ -1,0 +1,10 @@
+@import '../../assets/styles/_variables';
+
+.header {
+    padding: $offset-lg 0;
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+}
