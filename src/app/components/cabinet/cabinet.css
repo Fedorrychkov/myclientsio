@@ -1,0 +1,11 @@
+.cabinet__body {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; }
+
+.cabinet__left {
+  max-width: 320px;
+  width: 100%; }
+
+.cabinet__right {
+  width: 100%; }

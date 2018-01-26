@@ -1,0 +1,11 @@
+@import './_variables';
+
+.form {
+    display: block;
+    width: 100%;
+    position: relative;
+    &__action {
+        display: block;
+        margin: $offset-md 0;
+    }
+}

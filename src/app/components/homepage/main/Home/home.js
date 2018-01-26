@@ -4,7 +4,7 @@ import PageSection from '../../../../shared/ui/page-section/page-section';
 class Home extends Component {
     render() {
         return (
-            <PageSection class="home">
+            <PageSection classStyle="home">
                 isHome
             </PageSection>
         );

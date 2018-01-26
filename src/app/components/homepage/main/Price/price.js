@@ -4,7 +4,7 @@ import PageSection from '../../../../shared/ui/page-section/page-section';
 class Price extends Component {
     render() {
         return (
-            <PageSection class="price">
+            <PageSection classStyle="price">
                 isPrice
             </PageSection>
         );

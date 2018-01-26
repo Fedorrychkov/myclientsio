@@ -1,6 +1,10 @@
 @import './app/assets/styles/_variables';
 @import './app/assets/styles/_reset';
 @import './app/assets/styles/_links';
+@import './app/assets/styles/_table';
+@import './app/assets/styles/_form';
+@import './app/assets/styles/_input';
+@import './app/assets/styles/_button';
 
 .app {
   overflow: auto;
@@ -10,6 +14,12 @@
   margin: 0 auto;
   max-width: $screen-xl;
   width: 98%;
+}
+
+.section__title {
+  margin: $offset-md 0;
+  font-size: $font-lg;
+  color: $dark-color;
 }
 
 @media (max-width: $screen-xl) {

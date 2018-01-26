@@ -301,6 +301,102 @@ video {
     padding: 0 0 3px;
     border-bottom: 4px solid #52b4e1; }
 
+.table {
+  width: 100%;
+  border-collapse: collapse; }
+  .table__head {
+    width: 100%; }
+    .table__head .table__row {
+      color: #52b4e1; }
+  .table__body {
+    width: 100%; }
+    .table__body .table__row td {
+      border-bottom: 1px solid #bac4cf;
+      transition: all 0.15s; }
+      .table__body .table__row td:hover {
+        background-color: #f3f7fc; }
+  .table__row {
+    width: 100%; }
+  .table__th {
+    text-align: left;
+    padding: 12px; }
+  .table__td {
+    text-align: left;
+    padding: 6px 12px;
+    margin: 6px 0;
+    vertical-align: middle; }
+    .table__td a {
+      color: #52b4e1;
+      font-weight: bold;
+      transition: all 0.15s; }
+      .table__td a:hover {
+        color: #4EC5FF; }
+    .table__td-top {
+      font-weight: bold;
+      color: #8f9ba9;
+      margin: 0 0 6px; }
+
+.form {
+  display: block;
+  width: 100%;
+  position: relative; }
+  .form__action {
+    display: block;
+    margin: 18px 0; }
+
+.input__box {
+  display: flex;
+  justify-content: space-between;
+  align-items: top; }
+
+.input__part {
+  width: 47%;
+  display: block; }
+
+.input__field {
+  display: block;
+  margin: 6px 0;
+  position: relative;
+  width: 100%; }
+
+.input__label {
+  font-size: 18px; }
+
+.input__control {
+  width: 100%;
+  display: block;
+  padding: 12px 12px;
+  font-size: 18px;
+  box-sizing: border-box;
+  border: 2px solid #8f9ba9;
+  margin: 12px 0;
+  border-radius: 5px; }
+  .input__control:focus {
+    background-color: #f3f7fc; }
+
+.input__error {
+  color: #b12929; }
+
+.input span {
+  display: block; }
+
+.button {
+  color: #6b7784;
+  padding: 12px 18px;
+  min-width: 120px;
+  transition: all 0.15s;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #ffffff;
+  border: 2px solid #6b7784;
+  border-radius: 5px; }
+  .button:hover {
+    background-color: #6b7784;
+    color: #ffffff; }
+  .button:disabled {
+    opacity: .5; }
+
 .app {
   overflow: auto; }
 
@@ -308,6 +404,11 @@ video {
   margin: 0 auto;
   max-width: 1440px;
   width: 98%; }
+
+.section__title {
+  margin: 18px 0;
+  font-size: 24px;
+  color: #6b7784; }
 
 @media (max-width: 1440px) {
   .wrapper {

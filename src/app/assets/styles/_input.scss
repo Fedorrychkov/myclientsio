@@ -1,0 +1,41 @@
+@import './_variables';
+
+.input {
+    &__box {
+        display: flex;
+        justify-content: space-between;
+        align-items: top;
+    }
+    &__part {
+        width: 47%;
+        display: block;
+    }
+    &__field {
+        display: block;
+        margin: $offset-mc 0;
+        position: relative;
+        width: 100%;
+    }
+    &__label {
+        font-size: $font-md;
+    }
+    &__control {
+        width: 100%;
+        display: block;
+        padding: $offset-sm $offset-sm;
+        font-size: $font-md;
+        box-sizing: border-box;
+        border: 2px solid $gray-color;
+        margin: $offset-sm 0;
+        border-radius: 5px;
+        &:focus {
+            background-color: $smoke-color;
+        }
+    }
+    &__error {
+        color: $red-color;
+    }
+    & span {
+        display: block;
+    }
+}

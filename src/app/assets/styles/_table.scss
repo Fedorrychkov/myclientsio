@@ -1,0 +1,50 @@
+@import './_variables';
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    &__head {
+        width: 100%;
+        & .table__row {
+            color: $blue-color;
+        }
+    }
+    &__body {
+        width: 100%;
+        & .table__row {
+            & td {
+                border-bottom: 1px solid $light-color;
+                transition: all $animation-fast;
+                &:hover {
+                    background-color: $smoke-color;
+                }
+            }
+        }
+    }
+    &__row {
+        width: 100%;
+    }
+    &__th {
+        text-align: left;
+        padding: $offset-sm;
+    }
+    &__td {
+        text-align: left;
+        padding: $offset-mc $offset-sm;
+        margin: $offset-mc 0;
+        vertical-align: middle;
+        & a {
+            color: $blue-color;
+            font-weight: bold;
+            transition: all $animation-fast;
+            &:hover {
+                color: $button-start;
+            }
+        }
+        &-top {
+            font-weight: bold;
+            color: $gray-color;
+            margin: 0 0 $offset-mc;
+        }
+    }
+}

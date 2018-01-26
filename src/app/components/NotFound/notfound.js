@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import Header from '../../shared/header/header';
 
 class NotFound extends Component {
     render() {
         return (
             <div>
-                isNotFound
+                <Header />
+                <main className="wrapper">
+                    isNotFound
+                </main>
             </div>
         );
     }

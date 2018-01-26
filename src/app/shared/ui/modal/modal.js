@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import './modal.css';
 
 class Modal extends Component {
@@ -9,16 +8,16 @@ class Modal extends Component {
     }
 
     render() {
-        return ReactDOM.createPortal(
-            <div className="modal">
-                <div className="modal__body"> 
-                    <div className="modal__close">
-                        <span className="close"><i class="fa fa-times" aria-hidden="true" onClick={this.props.onClose}></i></span>
-                    </div>
+        return (
+            <div className="modal__body">
+                <h4 className="modal__title">{ this.props.title }</h4> 
+                <div className="modal__close">
+                    <span className="close"><i className="fa fa-times" aria-hidden="true" onClick={this.props.onClose}></i></span>
+                </div>
+                <div className="modal__body-body">
                     { this.props.children }
                 </div>
-            </div>,
-            this.root
+            </div>
         );
     }
 }
