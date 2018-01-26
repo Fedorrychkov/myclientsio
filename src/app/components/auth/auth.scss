@@ -8,4 +8,10 @@
     //         align-items: flex-end;
     //     }
     // }
+    &__form {
+        display: block;
+        margin: $offset-lg 0;
+        max-width: $screen-mc*1.5;
+        width: 100%;
+    }
 }
