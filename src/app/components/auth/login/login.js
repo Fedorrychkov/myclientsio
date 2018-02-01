@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Formsy from 'formsy-react';
+import env from '../../../environment/env';
 import FormControl from '../../../shared/ui/form-control/form-control';
+import reloadIcon from '../../../assets/icons/reload.svg';
 
 class LogIn extends Component {
     constructor(props) {
         super(props);
         this.disableButton = this.disableButton.bind(this);
         this.enableButton = this.enableButton.bind(this);
-        this.state = { canSubmit: false };
+        this.submit = this.submit.bind(this);
+        this.state = { canSubmit: false, loginError: "", isLoading: false };
     }
 
     disableButton() {
@@ -20,16 +23,42 @@ class LogIn extends Component {
     }
      
       submit(model) {
-        // fetch('http://example.com/', {
-        //   method: 'post',
-        //   body: JSON.stringify(model)
-        // });
-        console.log(model);
+        const date = new Date();
+        this.setState({ isLoading: true });
+        var loginReq = new Request(`${env.apiUrl}/auth/login`, {
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            }),
+            method: 'post',
+            mode: 'cors',
+            cache: 'default',
+            body: model
+        });
+        console.log(env);
+        if (env.production === false) {
+            console.log(model);
+            console.log(`Request ${loginReq.method}, ${loginReq.url}}`, `Time: ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`);    
+        }
+        fetch(loginReq).then(
+            data => {
+                console.log(data);
+                this.setState({ isLoading: false });
+                this.setState({loginError: ""});
+                localStorage.setItem('myclients.auth_token', data.token );
+            }
+        ).catch(error => {
+            this.setState({loginError: "Извините, но что-то пошло не так. Попробуйте войти позднее."})
+            this.setState({ isLoading: false });
+            localStorage.removeItem('myclients.auth_token' );
+        });
+
+        // localStorage.setItem('myclients.auth_token', 'data.token' );
     }
 
     render() {
         return (
             <div>
+                { this.state.loginError? <p className="error error-message">{ this.state.loginError }</p> : '' }
                 <div className="auth__form">
                     <Formsy onValidSubmit={this.submit} onValid={this.enableButton} onInvalid={this.disableButton}>
                         <FormControl
@@ -44,7 +73,9 @@ class LogIn extends Component {
                             validationError=" "
                             required
                         />
-                        <button className="button button__form" type="submit" disabled={!this.state.canSubmit}>Войти</button>
+                        <button className="button button__form" type="submit" disabled={!this.state.canSubmit}>
+                            { this.state.isLoading? <img src={reloadIcon} className="icon icon-reload" alt="reloading icon"/> : 'Войти' }
+                        </button>
                     </Formsy>
                 </div>
                 <p>У вас ещё нет аккаунта? <Link to='/auth/signup' className="link link__primary">Зарегистрироваться</Link></p>

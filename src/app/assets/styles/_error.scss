@@ -1,0 +1,10 @@
+@import './_variables';
+
+.error {
+    color: $red-color;
+    margin: $offset-md 0;
+    display: block;
+    &-message {
+        font-size: $font-md;
+    }
+}

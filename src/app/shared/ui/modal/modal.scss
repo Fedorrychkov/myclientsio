@@ -47,6 +47,7 @@
         width: 100%;
         position: relative;
         border-bottom: 1px solid $lightest-color;
+        z-index: 0;
         & i {
             display: inline-block;
             cursor: pointer;
@@ -65,6 +66,7 @@
         position: absolute;
         left: $offset-sm;
         top: $offset-sm;
+        z-index: 1;
     }
 }
 

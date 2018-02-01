@@ -23,7 +23,6 @@ class AddClient extends Component {
         //   method: 'post',
         //   body: JSON.stringify(model)
         // });
-        console.log(model);
     }
 
     render() {
@@ -31,7 +30,7 @@ class AddClient extends Component {
             <Formsy onValidSubmit={this.submit} onValid={this.enableButton} onInvalid={this.disableButton}>
                 <FormControl
                     name="name"
-                    label="ФИО"
+                    label="Имя"
                     validationError="This is not a valid name"
                 />
                 <FormControl

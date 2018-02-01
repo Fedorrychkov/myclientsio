@@ -397,6 +397,29 @@ video {
   .button:disabled {
     opacity: .5; }
 
+.icon {
+  max-width: 64px;
+  width: 100%;
+  display: block;
+  position: relative;
+  margin: 0 auto; }
+  .icon-reload {
+    max-width: 21px;
+    animation: reload-icon infinite 1.3s linear; }
+
+@keyframes reload-icon {
+  from {
+    transform: rotate(0); }
+  to {
+    transform: rotate(360deg); } }
+
+.error {
+  color: #b12929;
+  margin: 18px 0;
+  display: block; }
+  .error-message {
+    font-size: 18px; }
+
 .app {
   overflow: auto; }
 

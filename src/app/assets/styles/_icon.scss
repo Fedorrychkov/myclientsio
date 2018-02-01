@@ -1,0 +1,22 @@
+@import './_variables';
+
+.icon {
+    max-width: 64px;
+    width: 100%;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    &-reload {
+        max-width: 21px;
+        animation: reload-icon infinite $animation-slow*2 linear;
+    }
+}
+
+@keyframes reload-icon {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
