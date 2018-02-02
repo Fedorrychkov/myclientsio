@@ -33,8 +33,7 @@ class SignUp extends Component {
             cache: 'default',
             body: model
         });
-        console.log(env);
-        if (env.production === false) {
+        if (!env.production) {
             console.log(model);
             console.log(`Request ${signupReq.method}, ${signupReq.url}}`, `Time: ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`);    
         }

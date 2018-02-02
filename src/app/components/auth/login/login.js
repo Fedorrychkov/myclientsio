@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router';
 import Formsy from 'formsy-react';
 import env from '../../../environment/env';
 import FormControl from '../../../shared/ui/form-control/form-control';
@@ -11,20 +12,21 @@ class LogIn extends Component {
         this.disableButton = this.disableButton.bind(this);
         this.enableButton = this.enableButton.bind(this);
         this.submit = this.submit.bind(this);
-        this.state = { canSubmit: false, loginError: "", isLoading: false };
+        this.state = { canSubmit: false, loginError: "", isLoading: false, redirect: false };
     }
 
     disableButton() {
         this.setState({ canSubmit: false });
     }
      
-      enableButton() {
+    enableButton() {
         this.setState({ canSubmit: true });
     }
      
-      submit(model) {
+    submit(model) {
         const date = new Date();
         this.setState({ isLoading: true });
+        
         var loginReq = new Request(`${env.apiUrl}/auth/login`, {
             headers: new Headers({
                 'Content-Type': 'application/json'
@@ -34,24 +36,24 @@ class LogIn extends Component {
             cache: 'default',
             body: model
         });
-        console.log(env);
-        if (env.production === false) {
-            console.log(model);
-            console.log(`Request ${loginReq.method}, ${loginReq.url}}`, `Time: ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`);    
-        }
+        
         fetch(loginReq).then(
             data => {
                 console.log(data);
                 this.setState({ isLoading: false });
                 this.setState({loginError: ""});
                 localStorage.setItem('myclients.auth_token', data.token );
+                
             }
         ).catch(error => {
             this.setState({loginError: "Извините, но что-то пошло не так. Попробуйте войти позднее."})
-            this.setState({ isLoading: false });
+            this.setState({ isLoading: false, redirect: true }); // TODO: Redirect надо перенести в then, тут временно, так как нет backend
             localStorage.removeItem('myclients.auth_token' );
         });
-
+        if (!env.production) {
+            console.log(model);
+            console.log(`Request ${loginReq.method}, ${loginReq.url}}`, `Time: ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`);    
+        }
         // localStorage.setItem('myclients.auth_token', 'data.token' );
     }
 
@@ -79,6 +81,8 @@ class LogIn extends Component {
                     </Formsy>
                 </div>
                 <p>У вас ещё нет аккаунта? <Link to='/auth/signup' className="link link__primary">Зарегистрироваться</Link></p>
+            
+                { this.state.redirect ? <Redirect to="/cabinet"/>: '' }
             </div>
         );
     }
