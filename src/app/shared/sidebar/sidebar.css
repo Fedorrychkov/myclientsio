@@ -1,0 +1,38 @@
+.sidebar {
+  width: 100%; }
+  .sidebar__profile {
+    background-color: #e4ebf3;
+    max-width: 213.33333px;
+    padding: 12px 18px;
+    box-sizing: border-box; }
+    .sidebar__profile--name {
+      font-weight: bold;
+      font-size: 21.6px;
+      color: #6b7784; }
+    .sidebar__profile--username {
+      font-weight: bold;
+      font-size: 14.4px;
+      color: #6b7784;
+      margin: 6px 0; }
+
+.navbar {
+  width: 100%; }
+  .navbar__list {
+    display: inline-block;
+    background-color: #f3f7fc;
+    max-width: 213.33333px;
+    width: 100%; }
+  .navbar__item {
+    display: block; }
+  .navbar__link {
+    display: block;
+    color: #6b7784;
+    font-weight: bold;
+    font-size: 18px;
+    box-sizing: border-box;
+    padding: 12px 18px;
+    transition: all 0.15s; }
+    .navbar__link:hover {
+      background-color: #e4ebf3; }
+    .navbar__link-active {
+      color: #52b4e1; }

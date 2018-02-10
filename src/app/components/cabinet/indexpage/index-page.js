@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Modal from '../../../shared/ui/modal/modal';
 import AddClient from './add-client/add-client';
-import ClientList from './client-list/client-list';
+// import ClientList from './client-list/client-list';
+import ShowList from '../../../containers/showList';
+// import AddActivity from '../../../containers/addActivity';
 import './index-page.css';
 
 class IndexPage extends Component {
@@ -18,18 +20,21 @@ class IndexPage extends Component {
             <div>
                 <div className="control-panel">
                     <button className="button button__control" onClick={this.toggleModal}>
-                        <span>Добавить клиента</span>
+                        <span>Новый заказ</span>
                     </button>
                     
                     {
                         this.state.isModalOpen &&
-                        <Modal onClose={ this.toggleModal } title="Новая запись">
+                        <Modal onClose={ this.toggleModal } title="Заказ">
                             <AddClient />
                         </Modal>
                     }
                 </div>
-                
-                <ClientList />
+                <div>
+                    {/* < AddActivity /> */}
+                </div>
+                {/* <ClientList /> */}
+                <ShowList />
             </div>
         );
     }

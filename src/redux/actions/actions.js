@@ -1,14 +1,12 @@
-var addPhone = function (phone) {
+export const addActivity = activity => {
   return {
-    type: "ADD_PHONE",
-    phone
+    type: 'ADD_ACTIVITY',
+    activity
   }
-};
-var deletePhone = function (phone) {
+}
+export const setShowFilter = (filter) => {
   return {
-    type: "DELETE_PHONE",
-    phone
+    type: 'SET_SHOW_FILTER',
+    filter
   }
-};
- 
-module.exports = {addPhone, deletePhone};
+}

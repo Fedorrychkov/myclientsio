@@ -82,7 +82,7 @@ class LogIn extends Component {
                 </div>
                 <p>У вас ещё нет аккаунта? <Link to='/auth/signup' className="link link__primary">Зарегистрироваться</Link></p>
             
-                { this.state.redirect ? <Redirect to="/cabinet"/>: '' }
+                { this.state.redirect ? <Redirect to="/cabinet" />: '' }
             </div>
         );
     }

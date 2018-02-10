@@ -9,6 +9,9 @@
     &__item {
         display: block;
         margin: 0 $offset-lg 0 0;
+        &:last-child {
+            margin: 0;
+        }
         & a {
             text-decoration: none;
             color: $dark-color;

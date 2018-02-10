@@ -6,6 +6,8 @@
 .nav__item {
   display: block;
   margin: 0 24px 0 0; }
+  .nav__item:last-child {
+    margin: 0; }
   .nav__item a {
     text-decoration: none;
     color: #6b7784;

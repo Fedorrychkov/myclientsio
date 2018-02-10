@@ -33,6 +33,11 @@ class ClientItem extends Component {
                     </div>
                 </td>
                 <td className="table__td">
+                    <div className="clients__address table__td-address">  
+                        { item.address }
+                    </div>
+                </td>
+                <td className="table__td">
                     <div className="clients__date table__td-date">
                         { item.activeDate }
                     </div>

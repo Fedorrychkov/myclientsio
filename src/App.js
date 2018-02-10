@@ -11,13 +11,14 @@ class App extends Component {
     return (
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route exact path="/auth" component={Auth} />
-        <Route exact path="/auth/login" component={Auth} />
-        <Route exact path="/auth/signup" component={Auth} />
-        <Route exact path="/prices" component={HomePage} />
-        <Route exact path="/cabinet" component={Cabinet} />
-        <Route exact path="/cabinet/customers" component={Cabinet} />
-        <Route exact path="/cabinet/analytics" component={Cabinet} />
+        <Route path="/auth" component={Auth} />
+        <Route path="/auth/login" component={Auth} />
+        <Route path="/auth/signup" component={Auth} />
+        <Route path="/prices" component={HomePage} />
+        <Route path="/cabinet" component={Cabinet} />
+        <Route path="/cabinet/customers" component={Cabinet} />
+        <Route path="/cabinet/analytics" component={Cabinet} />
+        <Route path='/cabinet/settings' component={Cabinet} />
         <Route component={NotFound} />
       </Switch>
     );

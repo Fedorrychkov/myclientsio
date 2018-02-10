@@ -14,15 +14,16 @@ class AddClient extends Component {
         this.setState({ canSubmit: false });
     }
      
-      enableButton() {
+    enableButton() {
         this.setState({ canSubmit: true });
     }
      
-      submit(model) {
+    submit(model) {
         // fetch('http://example.com/', {
         //   method: 'post',
         //   body: JSON.stringify(model)
         // });
+        console.log(model);
     }
 
     render() {
@@ -44,6 +45,11 @@ class AddClient extends Component {
                     label="E-mail"
                     validations="isEmail"
                     validationError="This is not a valid email"
+                />
+                <FormControl
+                    name="address"
+                    label="Адрес*"
+                    validationError=""
                 />
                 <button className="button button__form" type="submit" disabled={!this.state.canSubmit}>Добавить</button>
             </Formsy>

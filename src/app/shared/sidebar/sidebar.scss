@@ -1,0 +1,49 @@
+@import '../../assets/styles/_variables';
+
+.sidebar {
+    width: 100%;
+    &__profile {
+        background-color: $lightest-color;
+        max-width: $screen-mc/1.5;
+        padding: $offset-sm $offset-md;
+        box-sizing: border-box;
+        &--name {
+            font-weight: bold;
+            font-size: $font-md*1.2;
+            color: $dark-color;
+        }
+        &--username {
+            font-weight: bold;
+            font-size: $font-sm*1.2;
+            color: $dark-color;
+            margin: $offset-mc 0;
+        }
+    }
+}
+.navbar {
+    width: 100%;
+    &__list {
+        display: inline-block;
+        background-color: $smoke-color;
+        max-width: $screen-mc/1.5;
+        width: 100%;
+    }
+    &__item {
+        display: block;
+    }
+    &__link {
+        display: block;
+        color: $dark-color;
+        font-weight: bold;
+        font-size: $font-md;
+        box-sizing: border-box;
+        padding: $offset-sm $offset-md;
+        transition: all $animation-fast;
+        &:hover {
+            background-color: $lightest-color;
+        }
+        &-active {
+            color: $blue-color;
+        }
+    }
+}

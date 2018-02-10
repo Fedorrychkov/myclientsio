@@ -3,8 +3,6 @@ import './modal.css';
 
 class Modal extends Component {
     componentWillMount() {
-        this.root = document.createElement('div');
-        document.body.appendChild(this.root);
     }
 
     render() {
