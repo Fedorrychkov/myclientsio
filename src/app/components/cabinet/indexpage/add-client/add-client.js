@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Formsy from 'formsy-react';
+import { connect } from 'react-redux';
 import FormControl from '../../../../shared/ui/form-control/form-control';
+import { addActivity } from '../../../../../redux/actions/actions';
 
 class AddClient extends Component {
     constructor(props) {
@@ -8,6 +10,7 @@ class AddClient extends Component {
         this.disableButton = this.disableButton.bind(this);
         this.enableButton = this.enableButton.bind(this);
         this.state = { canSubmit: false };
+        this.submit = this.submit.bind(this);
     }
 
     disableButton() {
@@ -23,7 +26,11 @@ class AddClient extends Component {
         //   method: 'post',
         //   body: JSON.stringify(model)
         // });
+        model.id = '12132';
+        model.status = 'Обычный';
+        model.activeDate = '11.11.2018';
         console.log(model);
+        this.props.add(model);
     }
 
     render() {
@@ -57,4 +64,13 @@ class AddClient extends Component {
     }
 }
 
-export default AddClient;
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        add: (activity) => {
+            dispatch(addActivity(activity))
+        }
+    }
+}
+
+export default connect(null, mapDispatchToProps)(AddClient);

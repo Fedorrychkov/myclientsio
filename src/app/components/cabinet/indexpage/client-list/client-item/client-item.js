@@ -30,6 +30,7 @@ class ClientItem extends Component {
                 <td className="table__td">
                     <div className="clients__status table__td-status">  
                         { item.status }
+                        { console.log(item.status, item) }
                     </div>
                 </td>
                 <td className="table__td">

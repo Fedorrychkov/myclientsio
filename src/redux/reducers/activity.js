@@ -8,7 +8,7 @@ const activity = (state = [], action) => {
             name: action.activity.name,
             phone: action.activity.phone,
             email:  action.activity.email,
-            status: action.activity.state,
+            status: action.activity.status,
             address: action.activity.address,
             activeDate: action.activity.activeDate
           }
