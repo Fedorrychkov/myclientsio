@@ -31,9 +31,13 @@ class ClientList extends Component {
     }
     componentWillMount() {
         this.setState({clientList: this.clientList});
-        this.clientList.map((item, index) => this.props.fill(item));
+        // this.clientList.map((item, index) => this.props.fill(item));
+    }
+    componentWillUnmount() {
     }
     render() {
+        // console.log(this.props.activity, 'update?');
+        // this.props.updateStore({update: 'NOT_UPDATE_STORE'}, this.props.activity); // TODO: Update status
         return (
             <div className="clients">
                 <h3 className="section__title">Последние заказы</h3>
@@ -48,7 +52,8 @@ class ClientList extends Component {
                         </tr>
                     </thead>
                     <tbody className="table__body">
-                        { this.props.activity.map((item, index) => <ClientItem key={item.id} clientItem={item}/> ) }
+                        {/* { this.props.activity.map((item, index) => <ClientItem key={item.id} clientItem={item}/> ) } */}
+                        { this.state.clientList.map((item, index) => <ClientItem key={item.id} clientItem={item}/> ) }
                     </tbody>
                 </table>
             </div>

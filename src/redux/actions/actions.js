@@ -10,3 +10,9 @@ export const setShowFilter = (filter) => {
     filter
   }
 }
+export const updateStore = (update) => {
+  return {
+    type: 'SET_STATE_UPDATE',
+    update
+  }
+}
