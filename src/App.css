@@ -355,24 +355,15 @@ video {
 
 .input__field {
   display: block;
-  margin: 6px 0;
+  margin: 18px 0;
   position: relative;
   width: 100%; }
 
 .input__label {
-  font-size: 18px; }
+  font-size: 12px; }
 
 .input__control {
-  width: 100%;
-  display: block;
-  padding: 12px 12px;
-  font-size: 18px;
-  box-sizing: border-box;
-  border: 2px solid #8f9ba9;
-  margin: 12px 0;
-  border-radius: 5px; }
-  .input__control:focus {
-    background-color: #f3f7fc; }
+  width: 100%; }
 
 .input__error {
   color: #b12929; }
@@ -391,9 +382,6 @@ video {
   background-color: #ffffff;
   border: 2px solid #6b7784;
   border-radius: 5px; }
-  .button:hover {
-    background-color: #6b7784;
-    color: #ffffff; }
   .button:disabled {
     opacity: .5; }
 

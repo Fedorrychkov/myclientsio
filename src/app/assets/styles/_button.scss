@@ -11,10 +11,10 @@
     background-color: $white-color;
     border: 2px solid $dark-color;
     border-radius: 5px;
-    &:hover {
-        background-color: $dark-color;
-        color: $white-color;
-    }
+    // &:hover {
+    //     background-color: $dark-color;
+    //     color: $white-color;
+    // }
     &:disabled {
         opacity: .5;
     }

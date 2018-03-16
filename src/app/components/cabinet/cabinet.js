@@ -7,6 +7,7 @@ import Customers from './customers/customers';
 import UserSettings from './settings';
 import SideBar from '../../shared/sidebar';
 import './cabinet.css';
+import ProfileComponent from './profile';
 
 class Cabinet extends Component {
     render() {
@@ -37,6 +38,7 @@ class Cabinet extends Component {
                             <Route exact path='/cabinet/customers' component={Customers}/>
                             <Route exact path='/cabinet/analytics' component={Analytics}/>
                             <Route exact path='/cabinet/settings' component={UserSettings}/>
+                            <Route exact path='/cabinet/profile' component={ProfileComponent}/>
                         </Switch>
                     </div>
                 </main>

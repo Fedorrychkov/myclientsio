@@ -4,6 +4,7 @@ import { Redirect } from 'react-router';
 import Formsy from 'formsy-react';
 import env from '../../../environment/env';
 import FormControl from '../../../shared/ui/form-control/form-control';
+import FormPassword from '../../../shared/ui/form-password/form-password';
 import reloadIcon from '../../../assets/icons/reload.svg';
 
 class LogIn extends Component {
@@ -40,7 +41,7 @@ class LogIn extends Component {
         fetch(loginReq).then(
             data => {
                 console.log(data);
-                this.setState({ isLoading: false });
+                this.setState({isLoading: false});
                 this.setState({loginError: ""});
                 localStorage.setItem('myclients.auth_token', data.token );
                 
@@ -65,17 +66,17 @@ class LogIn extends Component {
                     <Formsy onValidSubmit={this.submit} onValid={this.enableButton} onInvalid={this.disableButton}>
                         <FormControl
                             name="username"
-                            label="Логин или E-mail"
-                            validationError=" "
+                            label="Логин"
+                            checkValue={true}
+                            type="text"
                             required
                         />
-                        <FormControl
+                        <FormPassword
                             name="password"
-                            label="Пароль*"
-                            validationError=" "
+                            label="Пароль"
                             required
                         />
-                        <button className="button button__form" type="submit" disabled={!this.state.canSubmit}>
+                        <button className="button gradial-button gradial-button-blue gradial-button--shadow font-size--md" type="submit" disabled={!this.state.canSubmit}>
                             { this.state.isLoading? <img src={reloadIcon} className="icon icon-reload" alt="reloading icon"/> : 'Войти' }
                         </button>
                     </Formsy>

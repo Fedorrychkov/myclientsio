@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import './App.css';
+
 import HomePage from './app/components/homepage/homepage';
 import Cabinet from './app/components/cabinet/cabinet';
 import NotFound from './app/components/NotFound/notfound';
 import Auth from './app/components/auth/auth';
+
+import './App.css';
+import 'gradial/build/assets/css/simple.gradial.min.css';
 
 class App extends Component {
   render() {

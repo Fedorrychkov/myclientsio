@@ -12,25 +12,15 @@
     }
     &__field {
         display: block;
-        margin: $offset-mc 0;
+        margin: $offset-md 0;
         position: relative;
         width: 100%;
     }
     &__label {
-        font-size: $font-md;
+        font-size: $font-sm;
     }
     &__control {
         width: 100%;
-        display: block;
-        padding: $offset-sm $offset-sm;
-        font-size: $font-md;
-        box-sizing: border-box;
-        border: 2px solid $gray-color;
-        margin: $offset-sm 0;
-        border-radius: 5px;
-        &:focus {
-            background-color: $smoke-color;
-        }
     }
     &__error {
         color: $red-color;
